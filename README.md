@@ -3,30 +3,27 @@
 This repository contains various small projects and exercises written in the C programming language.  
 It's meant to serve as a collection of my personal learning, experimentation, and practice with C.
 
+## Disclaimer
+
+All projects in this repository were developed and tested on a **Linux environment**.  
+Compilation and execution were done using tools available on Linux systems (e.g., GCC).  
+If you're using Windows or macOS, some adjustments may be necessary.
+
 ## Contents
 
-Projects and exercises may include topics such as:
-- Basic input/output
-- Conditionals and loops
-- Arrays and strings
-- Pointers and memory management
-- Structures
-- File handling
-- Algorithms and data structures
-
-Each folder typically contains:
+Each project folder typically includes:
 - `main.c`: The main source file
-- Optional additional `.c` or `.h` files
-- `README.md`: A short description of the project (if applicable)
+- `Makefile`: To simplify compilation
+- `README.md`: A short description of the specific project (if applicable)
 
 ## Requirements
 
 To compile and run the projects, you need a C compiler such as:
 
 - [GCC](https://gcc.gnu.org/)
+- [Clang](https://clang.llvm.org/)
 
-Example compilation command:
-
+To compile using the terminal:
 ```bash
 cd <folder_name>
 make
