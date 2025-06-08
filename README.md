@@ -21,7 +21,6 @@ Each project folder typically includes:
 To compile and run the projects, you need a C compiler such as:
 
 - [GCC](https://gcc.gnu.org/)
-- [Clang](https://clang.llvm.org/)
 
 To compile using the terminal:
 ```bash
