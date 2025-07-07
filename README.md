@@ -19,7 +19,8 @@ To compile and run the projects, you need a C compiler such as:
 To compile using the terminal:
 
 ```bash
-cd <folder_name>
+git clone https://github.com/DuarteLacerda/C.git
+cd C
 make
 ./program
 ```
