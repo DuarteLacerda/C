@@ -21,6 +21,7 @@ To compile using the terminal:
 ```bash
 git clone https://github.com/DuarteLacerda/C.git
 cd C
+cd <folder_name>
 make
 ./program
 ```
