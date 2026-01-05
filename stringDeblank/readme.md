@@ -1,62 +1,62 @@
-Processador de Ficheiros com Substituição de Espaços
-===================================================
+```markdown
+# File Processor with Space Substitution (C)
 
-Descrição:
------------
-Este programa lê um ficheiro de texto especificado pelo utilizador, substitui todos os espaços por underscores (_) e grava apenas as linhas modificadas num novo ficheiro com extensão .out. O programa mostra o conteúdo modificado no terminal e relata o número de linhas alteradas.
+A C-based file utility designed to automate text sanitization. The program identifies lines containing spaces, replaces them with underscores (`_`), and filters these modified lines into a new output file. It is a practical example of stream processing and file descriptor management in a POSIX environment.
 
-Funcionalidades:
-----------------
-- Processamento de ficheiros de texto com validação de entrada
-- Substituição automática de espaços por underscores
-- Filtragem para gravar apenas linhas modificadas
-- Geração automática do nome do ficheiro de saída (adiciona .out)
-- Relatório de linhas modificadas
-- Mensagens de erro detalhadas para problemas de I/O
-- Gestão segura de descritores de ficheiros
+## 🛠️ Features
 
-Uso:
-----
-Execute o programa com o seguinte comando:
+* **Smart Filtering:** Only lines that actually undergo modification are saved to the output file.
+* **Dynamic Naming:** Automatically generates the output filename by appending `.out` to the original name.
+* **Content Transformation:** Replaces all standard spaces (` `) with underscores (`_`) while maintaining the rest of the text structure.
+* **Live Monitoring:** Displays modified content in the terminal and provides a summary report of changed lines.
+* **Robust I/O Management:** Secure handling of file descriptors and detailed error messaging for input/output issues.
 
-  ./programa --file nome_do_ficheiro.txt
 
-O programa criará um novo ficheiro chamado nome_do_ficheiro.txt.out contendo apenas as linhas que foram modificadas.
 
-Requisitos:
------------
-- Sistema operativo POSIX (Linux, macOS, etc.)
-- Compilador C compatível com C99
-- Bibliotecas: stdio.h, stdlib.h, unistd.h, fcntl.h, string.h
+## 🚀 Usage
 
-Limitações:
------------
-- Tamanho máximo do buffer: 1023 bytes
-- Não processa ficheiros com linhas muito longas (>1023 caracteres)
-- Apenas substitui espaços simples (não trata de tabs ou múltiplos espaços)
-- O nome do ficheiro de saída não pode exceder 1023 caracteres
+### Execution
+Run the program using the following command:
+```bash
+./processor --file filename.txt
 
-Autor:
--------
-Duarte Lacerda
+```
 
-Versão:
---------
-1.0
+### Result
 
-Licença:
----------
-Licença MIT - livre para uso e modificação.
+The program will create a new file named `filename.txt.out` containing only the modified lines.
+
+### Terminal Output Example
+
+```text
+Modified content:
+Text_with_substituted_spaces
+Another_modified_line
+
+Total lines modified: 2
+
+```
+
+## 💻 Requirements
+
+* **OS:** POSIX-compatible system (Linux, macOS, WSL).
+* **Compiler:** GCC or Clang (C99 compatible).
+* **Libraries:** `stdio.h`, `stdlib.h`, `unistd.h`, `fcntl.h`, `string.h`.
+
+## 🧠 Implementation Details & Constraints
+
+* **Non-Destructive:** The original source file is never altered.
+* **Buffer Limit:** Utilizes a 1024-byte buffer (1023 + null terminator). It is not designed for lines exceeding this length.
+* **Path Handling:** The generated output filename has a maximum limit of 1023 characters.
+* **Substitution Logic:** Currently targets standard spaces; tabs or multiple whitespace types are not treated as substitutes in the current version.
+* **Exit Codes:** Returns `0` on success and `1` for fatal I/O errors (details sent to `stderr`).
+
+## 📄 License
+
+Distributed under the **MIT License**. Free for use and modification.
 
 ---
 
-Notas:
-1. O programa preserva a formatação original exceto pela substituição de espaços
-2. Linhas sem espaços não são incluídas no ficheiro de saída
-3. Em caso de erro, o programa retorna código 1 com mensagem descritiva
-4. O ficheiro original nunca é alterado, apenas é criado um novo ficheiro
+**Author:** Duarte Lacerda
 
-Exemplo de saída no terminal:
-Modified content:
-Texto_com_espacos_substituidos
-Outra_linha_modificada
+**Version:** 1.0
