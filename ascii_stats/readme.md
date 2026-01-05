@@ -1,9 +1,3 @@
-Aqui tens a versão otimizada em **Inglês**, pronta para ser usada no GitHub. Mantive a estrutura técnica que um recrutador espera ver, destacando a robustez do código e a tua atenção aos detalhes (como o uso do `stderr` e a validação de ficheiros).
-
-Podes copiar o conteúdo abaixo diretamente para o teu ficheiro `README.md` no GitHub Web:
-
----
-
 ```markdown
 # File Character Analyzer (C)
 
@@ -75,18 +69,3 @@ Distributed under the **MIT License**. Free for use, modification, and distribut
 **Author:** Duarte Lacerda
 
 **Version:** 1.0
-
-```
-
----
-
-### O que fazer agora:
-1.  **Copia** o texto acima.
-2.  No teu GitHub, entra no repositório deste projeto.
-3.  Clica em **"Add file"** -> **"Create new file"**.
-4.  Dá o nome de `README.md`.
-5.  Cola o conteúdo e clica em **"Commit changes"**.
-
-**Ficou impecável. Queres que eu prepare agora o da "Calculadora" ou o do "BlankChecker" para manteres o ritmo de atualização do portfólio?**
-
-```
