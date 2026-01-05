@@ -1,86 +1,81 @@
-Conversor de Maiúsculas/Minúsculas para Arquivos de Texto
-=======================================================
+```markdown
+# Text Case Converter (C)
 
-Descrição:
-----------
-Este programa lê um arquivo de texto e oferece opções para converter o conteúdo para maiúsculas ou minúsculas. O conteúdo convertido é exibido no console. Inclui tratamento robusto de erros para operações com arquivos e argumentos de linha de comando.
+A versatile C-based CLI tool designed to read text files and perform case transformations. It allows users to toggle between uppercase and lowercase output or simply stream the file content to the console, featuring robust argument parsing and error handling.
 
-Funcionalidades:
----------------
-- Lê arquivo de texto especificado via argumento de linha de comando
-- Opção de conversão de caixa (maiúsculas ou minúsculas)
-- Exibe o conteúdo do arquivo no console
-- Tratamento abrangente de erros para:
-  - Argumentos ausentes ou inválidos
-  - Erros ao abrir/ler arquivos
-  - Opções de conversão inválidas
-  - Arquivos vazios
-- Interface de linha de comando simples e intuitiva
+## 🛠️ Features
 
-Como Usar:
-----------
-Sintaxe básica:
-  ./programa --filename <nome_arquivo> [--option L/l | U/u]
+* **Flexible Conversion:** Supports converting text to full uppercase or lowercase via command-line flags.
+* **Stream Mode:** Can be used as a simple file reader (displaying content without changes) if no conversion option is selected.
+* **Advanced Argument Parsing:** Validates both filenames and conversion flags (`L/l` for lower, `U/u` for upper).
+* **Comprehensive Error Handling:**
+    - Detects missing or invalid arguments.
+    - Manages file access errors (not found, permission denied).
+    - Identifies empty files and invalid conversion options.
+* **POSIX Compliant:** Built to run efficiently on Unix-like systems.
 
-Opções:
-  --filename    Especifica o arquivo de entrada (obrigatório)
-  --option      Opção de conversão (opcional):
-                L/l - Converter para minúsculas
-                U/u - Converter para maiúsculas
 
-Exemplos:
-1. Exibir conteúdo sem conversão:
-   ./conversor --filename exemplo.txt
 
-2. Converter para maiúsculas e exibir:
-   ./conversor --filename exemplo.txt --option U
+## 🚀 Usage
 
-3. Converter para minúsculas e exibir:
-   ./conversor --filename exemplo.txt --option l
+### Basic Syntax
+```bash
+./program --filename <filename> [--option L/l | U/u]
 
-Requisitos:
------------
-- Sistema operacional compatível com POSIX
-- Compilador C (C99 ou superior)
-- Bibliotecas padrão:
-  stdio.h, stdlib.h, unistd.h,
-  fcntl.h, string.h, ctype.h
+```
 
-Limitações:
------------
-- Tamanho máximo do buffer: 1023 bytes
-- Processa apenas caracteres ASCII
-- Não salva o resultado convertido em arquivo
-- Não suporta caracteres Unicode
+### Options
 
-Tratamento de Erros:
--------------------
-- Argumento de nome de arquivo ausente
-- Argumento de opção inválido
-- Arquivo não encontrado
-- Erros de leitura do arquivo
-- Arquivo vazio
-- Opção de conversão inválida
+* `--filename` : Specify the input file (required).
+* `--option`   : Conversion type (optional):
+* `L` or `l` : Convert to **lowercase**.
+* `U` or `u` : Convert to **UPPERCASE**.
 
-Autor:
-------
-Duarte Lacerda
 
-Versão:
--------
-1.0
 
-Licença:
---------
-Licença MIT - livre para uso e modificação
+### Examples
+
+1. **Display content as is:**
+```bash
+./converter --filename example.txt
+
+```
+
+
+2. **Convert to UPPERCASE:**
+```bash
+./converter --filename example.txt --option U
+
+```
+
+
+3. **Convert to lowercase:**
+```bash
+./converter --filename example.txt --option l
+
+```
+
+
+
+## 💻 Requirements
+
+* **OS:** POSIX-compatible system (Linux, macOS, WSL).
+* **Compiler:** GCC or Clang (C99 or higher).
+* **Standard Libraries:** `stdio.h`, `stdlib.h`, `unistd.h`, `fcntl.h`, `string.h`, `ctype.h`.
+
+## 🧠 Technical Specifications & Limitations
+
+* **Memory Management:** Uses a 1024-byte buffer (1023 + null terminator) for efficient stream processing.
+* **Character Set:** Optimized for **ASCII** characters.
+* **Non-Destructive:** The program only outputs to the console (`stdout`); it does **not** modify the original source file.
+* **Exit Codes:** Returns `0` on success and `1` for execution errors (with details sent to `stderr`).
+
+## 📄 License
+
+Distributed under the **MIT License**. Free for use and modification.
 
 ---
 
-Observações:
-1. O programa apenas exibe o texto convertido, não modifica o arquivo original
-2. Sem a flag --option, o conteúdo é exibido sem alterações
-3. Mensagens de erro são exibidas no stderr
-4. Códigos de retorno:
-   - 0: Sucesso
-   - 1: Ocorreu um erro
-5. A conversão de caixa aplica-se a todos os caracteres alfabéticos do arquivo
+**Author:** Duarte Lacerda
+
+**Version:** 1.0
