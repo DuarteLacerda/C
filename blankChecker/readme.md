@@ -1,69 +1,69 @@
-Contador e Conversor de Caracteres Especiais
-============================================
+```markdown
+# Special Character Counter & Converter (C)
 
-Descrição:
------------
-Este programa analisa um ficheiro de texto, contando espaços, tabulações e quebras de linha. Além disso, converte o conteúdo substituindo:
-- Espaços (' ') por underscores ('_')
-- Tabulações ('\t') por hífens ('-')
-- Quebras de linha ('\n') por espaços (' ')
-O resultado é guardado no ficheiro 'output.txt'.
+A specialized C utility designed to parse text files, quantify whitespace structures, and perform character-to-character conversions. This tool is ideal for sanitizing filenames or flattening text structures by replacing spaces, tabs, and newlines with specific delimiters.
 
-Funcionalidades:
-----------------
-- Contagem precisa de espaços, tabs e quebras de linha
-- Conversão de caracteres especiais com substituição configurável
-- Validação do tamanho do ficheiro (até 256 linhas de 1024 caracteres)
-- Geração de ficheiro de saída com conteúdo convertido
-- Tratamento robusto de erros com mensagens claras
-- Gestão segura de recursos (abertura/fecho de ficheiros)
+## 🛠️ Features
 
-Uso:
-----
-Sintaxe:
-  ./programa --file <nome_do_ficheiro>
+* **Precise Analytics:** Counts spaces, horizontal tabs, and line breaks independently.
+* **Content Transformation:** Automates character substitution:
+    - Spaces (` `) → Underscores (`_`)
+    - Tabs (`\t`) → Hyphens (`-`)
+    - Newlines (`\n`) → Spaces (` `)
+* **File Generation:** Outputs the converted content to a dedicated `output.txt` file.
+* **Size Validation:** Specifically handles files up to 256 lines of 1024 characters each.
+* **Safety & Security:** Robust error handling for file access and resource management (open/close operations).
 
-Exemplo:
-  ./conversor --file documento.txt
 
-Saída típica:
-Total de espaços: 120
-Total de tabulações: 15
-Total de quebras de linha: 30
+
+## 🚀 Usage
+
+### Syntax
+```bash
+./program --file <filename>
+
+```
+
+### Example
+
+```bash
+./converter --file document.txt
+
+```
+
+### Typical Output
+
+```text
+Total spaces: 120
+Total tabs: 15
+Total line breaks: 30
 
 Converted content saved to 'output.txt'.
 
-Requisitos:
------------
-- Sistema operativo: Qualquer sistema compatível com POSIX
-- Compilador: GCC ou Clang (C99 ou superior)
-- Bibliotecas: stdio.h, stdlib.h, unistd.h, fcntl.h, string.h, ctype.h
+```
 
-Limitações:
------------
-- Tamanho máximo do ficheiro: 256 linhas × 1024 caracteres
-- Buffer fixo de 1024 bytes por operação de leitura
-- Não preserva formatação original no ficheiro de saída
-- Substituições são permanentes no ficheiro de saída
+## 💻 Requirements
 
-Autor:
--------
-Duarte Lacerda
+* **OS:** POSIX-compatible (Linux, macOS, WSL).
+* **Compiler:** GCC or Clang (C99 or higher).
+* **Standard Libraries:** `stdio.h`, `stdlib.h`, `unistd.h`, `fcntl.h`, `string.h`, `ctype.h`.
 
-Versão:
---------
-1.0
+## 🧠 Implementation Details
 
-Licença:
----------
-Licença MIT - livre para uso e distribuição.
+* **Non-Destructive:** The original input file remains completely unchanged.
+* **Memory Management:** Uses a 1024-byte fixed buffer for read operations to ensure a low memory footprint.
+* **Overwrite Logic:** The `output.txt` file is automatically overwritten if it already exists.
+* **Exit Codes:** - `0`: Success.
+* `1`: Execution error (details sent to `stderr`).
+
+
+
+## 📄 License
+
+Distributed under the **MIT License**. Free for use and distribution.
 
 ---
 
-Notas Importantes:
-1. O ficheiro original permanece inalterado
-2. O ficheiro 'output.txt' é sempre sobrescrito se existir
-3. Caracteres especiais não mencionados permanecem inalterados
-4. Códigos de erro:
-   - 0: Sucesso
-   - 1: Erro na execução (detalhes no stderr)
+**Author:** Duarte Lacerda
+
+**Version:** 1.0
